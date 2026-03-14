@@ -334,34 +334,53 @@ data-es="⭐ Leer nuestras reseñas de Google ⭐">
 
 </footer>
   
-<!-- floating button: -->
-<div class="fixed bottom-6 right-6">
-<div class="relative group">
-<button
-class="bg-cyan-500 px-6 py-4 rounded-full shadow-xl text-white font-bold"
+<!-- Floating Message Button -->
+
+<div class="fixed bottom-6 right-6 z-50">
+
+<div class="relative">
+
+<button onclick="toggleMenu()"
+class="bg-cyan-500 px-6 py-4 rounded-full shadow-xl text-white font-bold hover:scale-105 transition"
 data-en="Message"
 data-es="Mensaje">
 
 Message
-</button>
-<div class="absolute bottom-16 right-0 hidden group-hover:flex flex-col gap-3">
-<a href="sms:17865168016"
-        class="bg-blue-500 text-white px-5 py-3 rounded-xl shadow-lg"
-        data-en="SMS"
-        data-es="SMS">
-        SMS
-        </a>
-        <a href="https://wa.me/17865168016"
-        class="bg-green-500 text-white px-5 py-3 rounded-xl shadow-lg"
-        data-en="WhatsApp"
-        data-es="WhatsApp">  
-        WhatsApp
-        </a>
-        
-        </div>
-        
-        </div>
 
+</button>
+
+<div id="messageMenu" class="hidden absolute bottom-16 right-0 flex-col gap-3">
+
+<a href="sms:17865168016"
+class="block bg-blue-500 text-white px-5 py-3 rounded-xl shadow-lg"
+data-en="SMS"
+data-es="SMS">
+
+SMS
+
+</a>
+
+<a href="https://wa.me/17865168016"
+class="block bg-green-500 text-white px-5 py-3 rounded-xl shadow-lg"
+data-en="WhatsApp"
+data-es="WhatsApp">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("messageMenu");
+  menu.classList.toggle("hidden");
+}
+</script>
 </div>
 </body> 
 </html>
