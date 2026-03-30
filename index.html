@@ -196,32 +196,54 @@ Message
 </div>
 
 <script>
-function toggleMenu(){
-  const menu = document.getElementById("messageMenu");
-  if(menu) menu.classList.toggle("hidden");
-}
-
-/* ✅ LANGUAGE SYSTEM */
 let currentLang = "en";
 
+/* LOAD SAVED LANGUAGE */
+window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get("lang");
+  const savedLang = localStorage.getItem("lang");
+
+  const langToUse = urlLang || savedLang || "en";
+  switchLanguage(langToUse);
+};
+
+/* SWITCH LANGUAGE */
 function switchLanguage(lang) {
   currentLang = lang;
+
+  localStorage.setItem("lang", lang);
 
   document.querySelectorAll("[data-en]").forEach(el => {
     el.textContent = el.getAttribute("data-" + lang);
   });
 
   const btn = document.getElementById("langToggle");
+  if (btn) {
+    btn.textContent = lang === "en" ? "Español" : "English";
 
-  btn.textContent = lang === "en" ? "Español" : "English";
+    btn.classList.add("active");
+    setTimeout(() => btn.classList.remove("active"), 200);
+  }
 
-  btn.classList.add("active");
-  setTimeout(() => btn.classList.remove("active"), 200);
+  /* KEEP LANGUAGE IN LINKS */
+  document.querySelectorAll("a").forEach(link => {
+    const url = new URL(link.href, window.location.origin);
+    url.searchParams.set("lang", lang);
+    link.href = url.toString();
+  });
 }
 
+/* TOGGLE BUTTON */
 function toggleLanguage() {
   const newLang = currentLang === "en" ? "es" : "en";
   switchLanguage(newLang);
+}
+
+/* KEEP YOUR MENU FUNCTION */
+function toggleMenu(){
+  const menu = document.getElementById("messageMenu");
+  if(menu) menu.classList.toggle("hidden");
 }
 </script>
 
