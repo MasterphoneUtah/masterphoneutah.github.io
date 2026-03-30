@@ -52,34 +52,43 @@ Choose a time that works for you
   </p>
 </div>
 
-<!-- FLOATING MESSAGE BUTTON -->
-<div class="fixed bottom-6 right-6">
+<!-- Floating Message Button -->
 
-  <div class="relative group">
+<div class="fixed bottom-6 right-6 z-50">
 
-    <button class="bg-cyan-500 px-6 py-4 rounded-full shadow-xl text-white font-bold">
-      Message
-    </button>
+<div class="relative">
 
-    <div class="absolute bottom-16 right-0 hidden group-hover:flex flex-col gap-3">
+<button onclick="toggleMenu()"
+class="bg-cyan-500 px-6 py-4 rounded-full shadow-xl text-white font-bold hover:scale-105 transition"
+data-en="Message"
+data-es="Mensaje">
 
-      <a href="sms:17865168016"
-      class="bg-blue-500 px-5 py-3 rounded-xl shadow-lg">
-        SMS
-      </a>
+Message
 
-      <a href="https://wa.me/17865168016"
-      class="bg-green-500 px-5 py-3 rounded-xl shadow-lg">
-        WhatsApp
-      </a>
+</button>
 
-    </div>
+<div id="messageMenu" class="hidden absolute bottom-16 right-0 flex-col gap-3">
 
-  </div>
+<a href="sms:17865168016"
+class="block bg-blue-500 text-white px-5 py-3 rounded-xl shadow-lg"
+data-en="SMS"
+data-es="SMS">
+
+SMS
+
+</a>
+
+<a href="https://wa.me/17865168016"
+class="block bg-green-500 text-white px-5 py-3 rounded-xl shadow-lg"
+data-en="WhatsApp"
+data-es="WhatsApp">
+
+WhatsApp
+
+</a>
 
 </div>
 
-</body>
-</html>
-</body>
-</html>
+</div>
+
+</div>
