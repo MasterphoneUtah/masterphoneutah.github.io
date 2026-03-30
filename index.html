@@ -62,7 +62,11 @@ body {
   text-shadow: 0 0 6px rgba(95,184,255,.8);
 }
 
-/* LANGUAGE BUTTONS */
+
+
+  
+<style>
+/* LANGUAGE BUTTON */
 .lang-btn {
   border: 1px solid #3a4a5f;
   padding: 6px 12px;
@@ -75,10 +79,25 @@ body {
   color: #5fb8ff;
   box-shadow: 0 0 10px rgba(95,184,255,.6);
 }
-</style>
-</head>
 
-<body class="text-white">
+/* click effect */
+.lang-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(95,184,255,0.9);
+}
+
+/* glow when switching */
+.lang-btn.active {
+  border-color: #5fb8ff;
+  color: #5fb8ff;
+  box-shadow: 0 0 12px rgba(95,184,255,.8);
+}
+</style>
+
+
+
+
+  
 
 <!-- HEADER -->
 <header class="bg-gradient-to-r from-black via-gray-900 to-black border-b border-gray-800">
@@ -102,9 +121,13 @@ body {
 
 </div>
 
-<div class="flex flex-col gap-2">
-<button onclick="switchLanguage('en')" class="lang-btn">English</button>
-<button onclick="switchLanguage('es')" class="lang-btn">Español</button>
+<div class="flex items-center">
+<button id="langToggle"
+onclick="toggleLanguage()"
+class="lang-btn"
+>
+Español
+</button>
 </div>
 
 </div>
