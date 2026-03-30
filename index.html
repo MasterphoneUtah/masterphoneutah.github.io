@@ -15,28 +15,26 @@ body {
   margin: 0;
   background: black;
   font-family: 'Inter', sans-serif;
+  color: white;
 }
 
-/* NEON BRAND */
+/* BRAND */
 .brand {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  letter-spacing: -1px;
 }
 
 .master {
   background: linear-gradient(90deg, #ff4fd8, #ff2fa6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 8px rgba(255,79,216,.8), 0 0 18px rgba(255,47,166,.6);
 }
 
 .phone {
   background: linear-gradient(90deg, #5fb8ff, #9be7ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 8px rgba(95,184,255,.9), 0 0 20px rgba(95,184,255,.6);
 }
 
 /* UTAH */
@@ -44,67 +42,48 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 4px;
 }
 
 .line {
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #5fb8ff, transparent);
-  box-shadow: 0 0 8px rgba(95,184,255,.8);
+  background: #5fb8ff;
 }
 
 .utah {
-  font-family: 'Space Grotesk', sans-serif;
   font-size: 12px;
   letter-spacing: .5em;
   color: #d8eaff;
-  text-shadow: 0 0 6px rgba(95,184,255,.8);
 }
 
-
-
-  
-<style>
 /* LANGUAGE BUTTON */
 .lang-btn {
   border: 1px solid #3a4a5f;
   padding: 6px 12px;
   border-radius: 8px;
   transition: 0.3s;
+  color: white;
 }
 
 .lang-btn:hover {
   border-color: #5fb8ff;
   color: #5fb8ff;
-  box-shadow: 0 0 10px rgba(95,184,255,.6);
 }
 
-/* click effect */
-.lang-btn:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 15px rgba(95,184,255,0.9);
-}
-
-/* glow when switching */
 .lang-btn.active {
   border-color: #5fb8ff;
   color: #5fb8ff;
-  box-shadow: 0 0 12px rgba(95,184,255,.8);
 }
 </style>
+</head>
 
-
-
-
-  
+<body class="text-white">
 
 <!-- HEADER -->
-<header class="bg-gradient-to-r from-black via-gray-900 to-black border-b border-gray-800">
+<header class="bg-black border-b border-gray-800">
 <div class="max-w-7xl mx-auto flex justify-between items-center p-6">
 
 <div class="flex items-center gap-4">
-
 <img src="LOGO2.png" class="h-20">
 
 <div>
@@ -118,60 +97,33 @@ body {
 <div class="line"></div>
 </div>
 </div>
-
 </div>
 
-<div class="flex items-center">
-<button id="langToggle"
-onclick="toggleLanguage()"
-class="lang-btn"
->
+<!-- LANGUAGE BUTTON -->
+<button id="langToggle" onclick="toggleLanguage()" class="lang-btn">
 Español
 </button>
-</div>
 
 </div>
 </header>
 
 <!-- HERO -->
-<section class="text-center py-24 bg-gradient-to-br from-black via-gray-900 to-blue-950">
+<section class="text-center py-24">
 
-<h2 class="text-5xl md:text-6xl font-bold mb-6"
+<h2 class="text-5xl font-bold mb-6"
 data-en="Elite Device Repair"
 data-es="Reparación Profesional de Dispositivos">
 Elite Device Repair
 </h2>
 
-<p class="text-xl text-gray-400 mb-10"
-data-en="Phones • Laptops • PCs • Tablet • Game Consoles • Microsoldering • More"
-data-es="Teléfonos • Portátiles • Ordenadores • Tabletas • Consolas • Microsoldadura • más">
-Phones • Laptops • PCs • Tablet • Game Consoles • Microsoldering • More
+<p class="text-gray-400 mb-10"
+data-en="Phones • Laptops • PCs • Tablets • Consoles"
+data-es="Teléfonos • Portátiles • PCs • Tabletas • Consolas">
+Phones • Laptops • PCs • Tablets • Consoles
 </p>
 
-<!-- Instagram Button -->
-<div class="mb-6">
-<a href="https://www.instagram.com/masterphoneutah"
-target="_blank"
-class="inline-flex items-center justify-center bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 px-8 py-3 rounded-2xl font-bold text-white shadow-xl hover:scale-105 transition"
-data-en="See Repairs on Instagram"
-data-es="Ver Reparaciones en Instagram">
-See Repairs on Instagram
-</a>
-</div>
-
-
- 
-  <!-- BOOK BUTTON 2 not bad but reloads -->
-          <!-- <a href="https://calendly.com/masterphoneutah"
-        target="_blank"
-        class="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 px-10 py-4 rounded-2xl text-lg font-bold shadow-2xl hover:scale-110 transition">
-        Book Appointment
-        </a> -->
-
-
-  <!-- BOOK BUTTON TEST1  -->
-     <a href="schedule.html"
-class="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 px-10 py-4 rounded-2xl text-lg font-bold shadow-2xl hover:scale-110 transition"
+<a href="schedule.html"
+class="bg-cyan-500 px-8 py-4 rounded-xl font-bold"
 data-en="Book Appointment"
 data-es="Reservar Cita">
 Book Appointment
@@ -179,230 +131,50 @@ Book Appointment
 
 </section>
 
-<!-- TRUST SECTION -->
-<section class="py-14 bg-gray-950 border-t border-gray-800">
-<div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
-<div>
-<h4 class="text-3xl font-bold text-cyan-400">1000+</h4>
-<p class="text-gray-400"
-data-en="Devices Repaired"
-data-es="Dispositivos Reparados">
+<!-- TRUST -->
+<section class="py-14 text-center">
 
-Devices Repaired
-</p>
-</div>
-<div>
-<h4 class="text-3xl font-bold text-cyan-400"
-data-en="Same Day"
-data-es="Mismo Día">
+<p data-en="Devices Repaired" data-es="Dispositivos Reparados">Devices Repaired</p>
 
-Same Day
-</h4>
-<p class="text-gray-400"
-data-en="Most Repairs"
-data-es="La Mayoría de Reparaciones">
+<p data-en="Same Day Repairs" data-es="Reparaciones el mismo día">Same Day Repairs</p>
 
-Most Repairs
-</p>
-</div>
-
-<div>
-<h4 class="text-3xl font-bold text-cyan-400"
-data-en="Free"
-data-es="Gratis">
-Free
-</h4>
-<p class="text-gray-400"
-data-en="Diagnostics"
-data-es="Diagnóstico">
-Diagnostics
-</p>
-</div>
-
-<div>
-<h4 class="text-3xl font-bold text-cyan-400"
-data-en="Warranty"
-data-es="Garantía">
-Warranty
-</h4>
-<p class="text-gray-400"
-data-en="On Repairs"
-data-es="En Reparaciones">
-On Repairs
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="bg-zinc-800 py-20">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<h3 class="text-4xl font-bold text-center mb-16"
-data-en="Our Services"
-data-es="Nuestros Servicios">
-Our Services
-</h3>
-
-<div class="grid md:grid-cols-3 gap-10">
-
-<div class="bg-gray-900 p-8 rounded-3xl border border-gray-800 shadow-xl">
-
-<img src="phone-repair.jpg" class="rounded-2xl mb-6 w-full h-48 object-cover">
-
-<h4 class="text-2xl font-semibold mb-4"
-data-en="Phone Repair"
-data-es="Reparación de Teléfonos">
-Phone Repair
-</h4>
-
-<p class="text-gray-400"
-data-en="Screen replacement, battery change, charging ports and more."
-data-es="Cambio de pantalla, batería, puertos de carga y más.">
-Screen replacement, battery change, charging ports and more.
-</p>
-
-</div>
-
-<div class="bg-gray-900 p-8 rounded-3xl border border-gray-800 shadow-xl">
-
-<img src="laptop-repair.jpg" class="rounded-2xl mb-6 w-full h-48 object-cover">
-
-<h4 class="text-2xl font-semibold mb-4"
-data-en="Laptop & PC Repair"
-data-es="Reparación de Laptop y PC">
-Laptop & PC Repair
-</h4>
-
-<p class="text-gray-400"
-data-en="Hardware repair, upgrades and diagnostics."
-data-es="Reparación de hardware, mejoras y diagnóstico.">
-Hardware repair, upgrades and diagnostics.
-</p>
-
-</div>
-
-<div class="bg-gray-900 p-8 rounded-3xl border border-gray-800 shadow-xl">
-
-<img src="motherboard-repair.jpg" class="rounded-2xl mb-6 w-full h-48 object-cover">
-
-<h4 class="text-2xl font-semibold mb-4"
-data-en="Motherboard Repair"
-data-es="Reparación de Placa Base">
-Motherboard Repair
-</h4>
-
-<p class="text-gray-400"
-data-en="Advanced chip-level microsoldering repair."
-data-es="Reparación avanzada con microsoldadura.">
-Advanced chip-level microsoldering repair.
-</p>
-
-</div>
-
-</div>
-</div>
+<p data-en="Free Diagnostics" data-es="Diagnóstico Gratis">Free Diagnostics</p>
 
 </section>
 
 <!-- CONTACT -->
+<section class="text-center py-20">
 
-<section class="py-20 px-6 text-center bg-gray-950 border-t border-gray-800">
+<h3 data-en="Visit Us" data-es="Visítanos">Visit Us</h3>
 
-<h3 class="text-4xl font-bold mb-8"
-data-en="Visit Us"
-data-es="Visítanos">
-Visit Us
-</h3>
-
-<p class="text-gray-400 mb-4">
-5772 W 8030 S, West Jordan, UT 84081
-</p>
-
-<p class="text-gray-400 mb-8">
-(786) 516-8016
-</p>
-
-<div class="max-w-4xl mx-auto mb-10">
-
-<iframe
-src="https://www.google.com/maps?q=5772+W+8030+S,+West+Jordan,+UT+84081&output=embed"
-width="100%"
-height="350"
-style="border:0;border-radius:20px;"
-loading="lazy">
-</iframe>
-
-</div>
-
-<a href="https://www.google.com/search?q=MasterPhone+Utah"
-target="_blank"
-class="inline-block mt-6 bg-white text-black px-8 py-3 rounded-xl font-semibold hover:scale-105 transition"
-data-en="⭐ Read Our Google Reviews ⭐"
-data-es="⭐ Leer nuestras reseñas de Google ⭐">
-⭐ Read Our Google Reviews ⭐
-</a>
+<p>5772 W 8030 S, West Jordan, UT</p>
 
 </section>
 
-<footer class="bg-black text-gray-500 text-center p-8 border-t border-gray-800">
-
-<p>© 2026 MasterPhone UTAH. All Rights Reserved.</p>
-
-</footer>
-  
-<!-- Floating Message Button -->
-
-<div class="fixed bottom-6 right-6 z-50">
-
-<div class="relative">
-
-<button onclick="toggleMenu()"
-class="bg-cyan-500 px-6 py-4 rounded-full shadow-xl text-white font-bold hover:scale-105 transition"
-data-en="Message"
-data-es="Mensaje">
-
-Message
-
-</button>
-
-<div id="messageMenu" class="hidden absolute bottom-16 right-0 flex-col gap-3">
-
-<a href="sms:17865168016"
-class="block bg-blue-500 text-white px-5 py-3 rounded-xl shadow-lg"
-data-en="SMS"
-data-es="SMS">
-
-SMS
-
-</a>
-
-<a href="https://wa.me/17865168016"
-class="block bg-green-500 text-white px-5 py-3 rounded-xl shadow-lg"
-data-en="WhatsApp"
-data-es="WhatsApp">
-
-WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+<!-- SCRIPT -->
 <script>
-function toggleMenu(){
-  const menu = document.getElementById("messageMenu");
-  menu.classList.toggle("hidden");
+let currentLang = "en";
+
+function switchLanguage(lang) {
+  currentLang = lang;
+
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+
+  const btn = document.getElementById("langToggle");
+
+  btn.textContent = lang === "en" ? "Español" : "English";
+
+  btn.classList.add("active");
+  setTimeout(() => btn.classList.remove("active"), 200);
+}
+
+function toggleLanguage() {
+  const newLang = currentLang === "en" ? "es" : "en";
+  switchLanguage(newLang);
 }
 </script>
-</div>
-</body> 
+
+</body>
 </html>
