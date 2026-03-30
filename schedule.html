@@ -46,7 +46,11 @@ Choose a time that works for you
 
 <!-- PHONE NUMBER -->
 <div class="mt-10 text-center text-lg">
-  <p class="text-gray-400">Prefer to call or text?</p>
+  <p class="text-gray-400"
+data-en="Prefer to call or text?"
+data-es="¿Prefieres llamar o enviar mensaje?">
+Prefer to call or text?
+</p>
   <p class="text-cyan-400 text-2xl font-bold mt-2">
     (786) 516-8016
   </p>
@@ -92,3 +96,36 @@ WhatsApp
 </div>
 
 </div>
+  <script>
+let currentLang = "en";
+
+/* LOAD LANGUAGE */
+window.onload = function () {
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get("lang");
+  const savedLang = localStorage.getItem("lang");
+
+  const langToUse = urlLang || savedLang || "en";
+  switchLanguage(langToUse);
+};
+
+/* SWITCH LANGUAGE */
+function switchLanguage(lang) {
+  currentLang = lang;
+
+  localStorage.setItem("lang", lang);
+
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+}
+
+/* KEEP YOUR MENU */
+function toggleMenu(){
+  const menu = document.getElementById("messageMenu");
+  if(menu) menu.classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>
