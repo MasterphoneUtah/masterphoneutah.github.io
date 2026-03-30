@@ -18,22 +18,26 @@ body {
   color: white;
 }
 
+/* NEON BRAND */
 .brand {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 36px;
   font-weight: 700;
+  letter-spacing: -1px;
 }
 
 .master {
   background: linear-gradient(90deg, #ff4fd8, #ff2fa6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(255,79,216,.8), 0 0 18px rgba(255,47,166,.6);
 }
 
 .phone {
   background: linear-gradient(90deg, #5fb8ff, #9be7ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(95,184,255,.9), 0 0 20px rgba(95,184,255,.6);
 }
 
 /* UTAH */
@@ -41,18 +45,22 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-top: 4px;
 }
 
 .line {
   width: 40px;
   height: 2px;
-  background: #5fb8ff;
+  background: linear-gradient(90deg, transparent, #5fb8ff, transparent);
+  box-shadow: 0 0 8px rgba(95,184,255,.8);
 }
 
 .utah {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 12px;
   letter-spacing: .5em;
   color: #d8eaff;
+  text-shadow: 0 0 6px rgba(95,184,255,.8);
 }
 
 /* LANGUAGE BUTTON */
@@ -67,11 +75,18 @@ body {
 .lang-btn:hover {
   border-color: #5fb8ff;
   color: #5fb8ff;
+  box-shadow: 0 0 10px rgba(95,184,255,.6);
+}
+
+.lang-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(95,184,255,0.9);
 }
 
 .lang-btn.active {
   border-color: #5fb8ff;
   color: #5fb8ff;
+  box-shadow: 0 0 12px rgba(95,184,255,.8);
 }
 </style>
 </head>
@@ -79,10 +94,11 @@ body {
 <body class="text-white">
 
 <!-- HEADER -->
-<header class="bg-black border-b border-gray-800">
+<header class="bg-gradient-to-r from-black via-gray-900 to-black border-b border-gray-800">
 <div class="max-w-7xl mx-auto flex justify-between items-center p-6">
 
 <div class="flex items-center gap-4">
+
 <img src="LOGO2.png" class="h-20">
 
 <div>
@@ -96,12 +112,15 @@ body {
 <div class="line"></div>
 </div>
 </div>
+
 </div>
 
-<!-- LANGUAGE BUTTON -->
+<!-- ✅ FIXED SINGLE BUTTON -->
+<div class="flex items-center">
 <button id="langToggle" onclick="toggleLanguage()" class="lang-btn">
 Español
 </button>
+</div>
 
 </div>
 </header>
@@ -121,7 +140,6 @@ data-es="Teléfonos • Portátiles • Ordenadores • Tabletas • Consolas �
 Phones • Laptops • PCs • Tablet • Game Consoles • Microsoldering • More
 </p>
 
-<!-- Instagram Button -->
 <div class="mb-6">
 <a href="https://www.instagram.com/masterphoneutah"
 target="_blank"
@@ -132,18 +150,7 @@ See Repairs on Instagram
 </a>
 </div>
 
-
- 
-  <!-- BOOK BUTTON 2 not bad but reloads -->
-          <!-- <a href="https://calendly.com/masterphoneutah"
-        target="_blank"
-        class="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 px-10 py-4 rounded-2xl text-lg font-bold shadow-2xl hover:scale-110 transition">
-        Book Appointment
-        </a> -->
-
-
-  <!-- BOOK BUTTON TEST1  -->
-     <a href="schedule.html"
+<a href="schedule.html"
 class="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 px-10 py-4 rounded-2xl text-lg font-bold shadow-2xl hover:scale-110 transition"
 data-en="Book Appointment"
 data-es="Reservar Cita">
@@ -155,63 +162,46 @@ Book Appointment
 <!-- TRUST SECTION -->
 <section class="py-14 bg-gray-950 border-t border-gray-800">
 <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
+
 <div>
 <h4 class="text-3xl font-bold text-cyan-400">1000+</h4>
-<p class="text-gray-400"
-data-en="Devices Repaired"
-data-es="Dispositivos Reparados">
-
-Devices Repaired
-</p>
-</div>
-<div>
-<h4 class="text-3xl font-bold text-cyan-400"
-data-en="Same Day"
-data-es="Mismo Día">
-
-Same Day
-</h4>
-<p class="text-gray-400"
-data-en="Most Repairs"
-data-es="La Mayoría de Reparaciones">
-
-Most Repairs
-</p>
+<p class="text-gray-400" data-en="Devices Repaired" data-es="Dispositivos Reparados">Devices Repaired</p>
 </div>
 
 <div>
-<h4 class="text-3xl font-bold text-cyan-400"
-data-en="Free"
-data-es="Gratis">
-Free
-</h4>
-<p class="text-gray-400"
-data-en="Diagnostics"
-data-es="Diagnóstico">
-Diagnostics
-</p>
+<h4 class="text-3xl font-bold text-cyan-400" data-en="Same Day" data-es="Mismo Día">Same Day</h4>
+<p class="text-gray-400" data-en="Most Repairs" data-es="La Mayoría de Reparaciones">Most Repairs</p>
 </div>
 
 <div>
-<h4 class="text-3xl font-bold text-cyan-400"
-data-en="Warranty"
-data-es="Garantía">
-Warranty
-</h4>
-<p class="text-gray-400"
-data-en="On Repairs"
-data-es="En Reparaciones">
-On Repairs
-</p>
+<h4 class="text-3xl font-bold text-cyan-400" data-en="Free" data-es="Gratis">Free</h4>
+<p class="text-gray-400" data-en="Diagnostics" data-es="Diagnóstico">Diagnostics</p>
+</div>
+
+<div>
+<h4 class="text-3xl font-bold text-cyan-400" data-en="Warranty" data-es="Garantía">Warranty</h4>
+<p class="text-gray-400" data-en="On Repairs" data-es="En Reparaciones">On Repairs</p>
 </div>
 
 </div>
-
 </section>
 
+<!-- (rest of your sections stay the same — unchanged) -->
 
-<!-- SCRIPT -->
+<!-- FLOATING BUTTON -->
+<div class="fixed bottom-6 right-6 z-50">
+<button onclick="toggleMenu()" class="bg-cyan-500 px-6 py-4 rounded-full text-white font-bold">
+Message
+</button>
+</div>
+
 <script>
+function toggleMenu(){
+  const menu = document.getElementById("messageMenu");
+  if(menu) menu.classList.toggle("hidden");
+}
+
+/* ✅ LANGUAGE SYSTEM */
 let currentLang = "en";
 
 function switchLanguage(lang) {
