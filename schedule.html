@@ -8,7 +8,7 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- ✅ FONTS -->
+<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -18,7 +18,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* 🔥 TITLE (NEON STYLE) */
+/* TITLE */
 .title {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 48px;
@@ -43,7 +43,7 @@ body {
 
 <body>
 
-<!-- 🔥 TITLE SECTION -->
+<!-- TITLE -->
 <div class="text-center py-14">
 
   <h1 class="title"
@@ -60,83 +60,91 @@ body {
 
 </div>
 
-<!-- ✅ CALENDLY (CORRECT PLACE) -->
+<!-- CALENDLY -->
 <div class="max-w-4xl mx-auto px-4">
-  <div class="calendly-inline-widget"
-    data-url="https://calendly.com/masterphoneutah"
-    style="min-width:320px;height:700px;">
-  </div>
+  <div id="calendlyWrapper"></div>
 </div>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<!-- PHONE NUMBER -->
+<!-- PHONE -->
 <div class="mt-10 text-left text-lg px-6">
-<p class="text-gray-400"
-   data-en="Issues booking? 
-  Call or text us."
-   data-es="¿Problemas al reservar? 
-  Llámanos o envíanos un mensaje.">
-  Issues booking? 
-  Call or text us.
-</p>
+  <p class="text-gray-400"
+     data-en="Issues booking? Call or text us."
+     data-es="¿Problemas al reservar? Llámanos o envíanos un mensaje.">
+    Issues booking? Call or text us.
+  </p>
+
   <p class="text-cyan-400 text-2xl font-bold mt-2">
     (786) 516-8016
   </p>
 </div>
 
-<!-- Floating Message Button -->
-
+<!-- FLOAT BUTTON -->
 <div class="fixed bottom-6 right-6 z-50">
+  <div class="relative">
 
-<div class="relative">
+    <button onclick="toggleMenu()"
+    class="bg-cyan-500 px-6 py-4 rounded-full shadow-xl text-white font-bold hover:scale-105 transition"
+    data-en="Message"
+    data-es="Mensaje">
+    Message
+    </button>
 
-<button onclick="toggleMenu()"
-class="bg-cyan-500 px-6 py-4 rounded-full shadow-xl text-white font-bold hover:scale-105 transition"
-data-en="Message"
-data-es="Mensaje">
+    <div id="messageMenu" class="hidden absolute bottom-16 right-0 flex-col gap-3">
 
-Message
+      <a href="sms:17865168016"
+      class="block bg-blue-500 text-white px-5 py-3 rounded-xl shadow-lg"
+      data-en="SMS"
+      data-es="SMS">
+      SMS
+      </a>
 
-</button>
+      <a href="https://wa.me/17865168016"
+      class="block bg-green-500 text-white px-5 py-3 rounded-xl shadow-lg"
+      data-en="WhatsApp"
+      data-es="WhatsApp">
+      WhatsApp
+      </a>
 
-<div id="messageMenu" class="hidden absolute bottom-16 right-0 flex-col gap-3">
+    </div>
 
-<a href="sms:17865168016"
-class="block bg-blue-500 text-white px-5 py-3 rounded-xl shadow-lg"
-data-en="SMS"
-data-es="SMS">
-
-SMS
-
-</a>
-
-<a href="https://wa.me/17865168016"
-class="block bg-green-500 text-white px-5 py-3 rounded-xl shadow-lg"
-data-en="WhatsApp"
-data-es="WhatsApp">
-
-WhatsApp
-
-</a>
-
+  </div>
 </div>
 
-</div>
-
-</div>
-  <script>
+<!-- SCRIPT -->
+<script>
 let currentLang = "en";
 
-/* LOAD LANGUAGE */
+/* LOAD PAGE */
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get("lang");
   const savedLang = localStorage.getItem("lang");
 
   const langToUse = urlLang || savedLang || "en";
+
   switchLanguage(langToUse);
+  loadCalendly(langToUse);
 };
+
+/* LOAD CALENDLY */
+function loadCalendly(lang) {
+  const wrapper = document.getElementById("calendlyWrapper");
+
+  const url = "https://calendly.com/masterphoneutah?hide_gdpr_banner=1"
+    + (lang === "es" ? "&locale=es" : "&locale=en");
+
+  wrapper.innerHTML = `
+    <div class="calendly-inline-widget"
+      data-url="${url}"
+      style="min-width:320px;height:700px;">
+    </div>
+  `;
+
+  const script = document.createElement("script");
+  script.src = "https://assets.calendly.com/assets/external/widget.js";
+  script.async = true;
+  document.body.appendChild(script);
+}
 
 /* SWITCH LANGUAGE */
 function switchLanguage(lang) {
@@ -147,9 +155,11 @@ function switchLanguage(lang) {
   document.querySelectorAll("[data-en]").forEach(el => {
     el.textContent = el.getAttribute("data-" + lang);
   });
+
+  loadCalendly(lang);
 }
 
-/* KEEP YOUR MENU */
+/* MENU */
 function toggleMenu(){
   const menu = document.getElementById("messageMenu");
   if(menu) menu.classList.toggle("hidden");
