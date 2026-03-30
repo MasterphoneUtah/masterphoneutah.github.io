@@ -8,30 +8,56 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- ✅ FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
   background: black;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🔥 TITLE (NEON STYLE) */
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1px;
+
+  background: linear-gradient(90deg, #5fb8ff, #9be7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 10px rgba(95,184,255,.8),
+               0 0 25px rgba(95,184,255,.5);
+}
+
+/* subtitle */
+.subtitle {
+  font-size: 20px;
+  color: #9ca3af;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TITLE -->
-<div class="text-center py-10">
-  <h1 
-data-en="Book Your Repair" 
-data-es="Reserva tu reparación">
-Book Your Repair
-</h1>
+<!-- 🔥 TITLE SECTION -->
+<div class="text-center py-14">
 
-<p 
-data-en="Choose a time that works for you" 
-data-es="Elige un horario que te funcione">
-Choose a time that works for you
-</p>
+  <h1 class="title"
+  data-en="Book Your Repair" 
+  data-es="Reserva tu reparación">
+  Book Your Repair
+  </h1>
+
+  <p class="subtitle mt-4"
+  data-en="Choose a time that works for you" 
+  data-es="Elige un horario que te funcione">
+  Choose a time that works for you
+  </p>
+
 </div>
 
 <!-- ✅ CALENDLY (CORRECT PLACE) -->
